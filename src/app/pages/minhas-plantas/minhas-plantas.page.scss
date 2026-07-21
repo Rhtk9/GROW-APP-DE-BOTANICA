@@ -1,0 +1,339 @@
+// src/app/pages/minhas-plantas/minhas-plantas.page.scss
+:host {
+  --background: #F8FDF9;
+}
+
+ion-content {
+  --background: #F8FDF9;
+}
+
+/* ========== ESTATÍSTICAS ========== */
+.stats-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-radius: 20px;
+  padding: 16px;
+  color: #fff;
+
+  .stat-item {
+    text-align: center;
+
+    ion-icon {
+      font-size: 22px;
+      color: #B7E4C7;
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: 800;
+      display: block;
+      margin: 2px 0;
+    }
+
+    small {
+      font-size: 11px;
+      color: #95D5B2;
+    }
+  }
+}
+
+/* ========== BUSCA ========== */
+.search-container {
+  margin-bottom: 12px;
+}
+
+/* ========== FILTROS ========== */
+.filtros {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 12px 0;
+  -webkit-overflow-scrolling: touch;
+
+  ion-chip {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+/* ========== BOTÃO ADICIONAR ========== */
+.btn-adicionar {
+  --background: linear-gradient(135deg, #2D6A4F, #52B788);
+  --border-radius: 14px;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* ========== LOADING ========== */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  color: #6b8f74;
+
+  ion-spinner {
+    --color: #2D6A4F;
+  }
+
+  p {
+    margin-top: 12px;
+  }
+}
+
+/* ========== RESULT COUNT ========== */
+.result-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1B4332;
+  margin-bottom: 12px;
+}
+
+/* ========== EMPTY STATE ========== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 40px 0;
+
+  ion-icon {
+    font-size: 48px;
+    color: #95D5B2;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1B4332;
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+    color: #6b8f74;
+    margin: 0;
+  }
+}
+
+/* ========== GRID DE PLANTAS ========== */
+.plantas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding-bottom: 20px;
+
+  .planta-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid rgba(45,106,79,0.08);
+    box-shadow: 0 2px 12px rgba(45,106,79,0.06);
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(45,106,79,0.12);
+    }
+
+    .card-image {
+      position: relative;
+      height: 120px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .card-emoji {
+        font-size: 44px;
+      }
+
+      .card-status {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        font-size: 20px;
+        background: rgba(255,255,255,0.85);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card-fase {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        background: rgba(255,255,255,0.85);
+        padding: 2px 10px;
+        border-radius: 8px;
+        font-size: 10px;
+        font-weight: 700;
+        color: #2D6A4F;
+      }
+    }
+
+    .card-content {
+      padding: 12px;
+
+      h3 {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1B4332;
+        margin: 0 0 2px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .especie {
+        font-size: 11px;
+        color: #6b8f74;
+        margin: 0 0 8px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11px;
+        color: #4a6355;
+        margin-bottom: 8px;
+
+        ion-icon {
+          font-size: 14px;
+        }
+
+        .felicidade {
+          font-weight: 600;
+        }
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 10px;
+        color: #6b8f74;
+        border-top: 1px solid rgba(45,106,79,0.06);
+        padding-top: 8px;
+
+        .data-criacao {
+          flex: 1;
+        }
+
+        .seta {
+          font-size: 16px;
+          color: #95D5B2;
+        }
+      }
+    }
+  }
+}
+
+/* ========== ÚLTIMAS ATIVIDADES ========== */
+.ultimas-atividades {
+  margin-top: 20px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1B4332;
+    margin: 0 0 12px 0;
+  }
+
+  .atividade-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(45,106,79,0.06);
+    margin-bottom: 8px;
+
+    .atividade-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      ion-icon {
+        font-size: 16px;
+        color: #2D6A4F;
+      }
+    }
+
+    .atividade-content {
+      flex: 1;
+
+      p {
+        font-size: 12px;
+        color: #1B4332;
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      small {
+        font-size: 10px;
+        color: #6b8f74;
+      }
+    }
+
+    .atividade-xp {
+      font-size: 11px;
+      font-weight: 700;
+      color: #2D6A4F;
+      background: #D8F3DC;
+      padding: 2px 10px;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 480px) {
+  .plantas-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .stats-banner {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 12px;
+
+    .stat-item span {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .plantas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .plantas-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
