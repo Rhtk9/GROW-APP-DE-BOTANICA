@@ -3,9 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 // src/environments/environment.ts
+// src/environments/environment.ts
+
+
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/api'
+  apiUrl: 'https://grow-api-3a4s.onrender.com/api'  // ← URL DO RENDER
 };
 
 /*
